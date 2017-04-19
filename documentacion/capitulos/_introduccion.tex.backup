@@ -1,0 +1,281 @@
+\chapter{Introducción}
+% \begin{quotation}
+% 	\begin{small}
+%    \textit{Siempre que enseñes, enseña a la vez a dudar lo que enseñes.}
+% 	\end{small}
+% 	\begin{flushright}José Ortega y Gasset.\end{flushright}
+% \end{quotation}
+
+\section{El hombre y la inteligencia artificial}
+	\noindent El hombre se ha caracterizado siempre por la búsqueda constante de nuevas
+	vías para mejorar sus condiciones de vida. Los progresos obtenidos han permitido
+	dirigir estos esfuerzos a diversos campos, como por ejemplo, a la construcción
+	de máquinas calculadoras que ayuden a resolver, de forma automática y rápida,
+	determinadas operaciones que resultan tediosas cuando se realizan a mano. Sin
+	embargo, se observa una limitación importante: ¿qué ocurre cuando el problema
+	que se quiere resolver no admite un tratamiento algorítmico, como por ejemplo
+	la clasificación de objetos? La Inteligencia Artificial (\textit{Artificial
+	Intelligence}, AI), es un intento por
+	descubrir y describir aspectos de la inteligencia humana que pueden ser simulados
+	mediante máquinas. Esta disciplina se ha desarrollado	fuertemente en los últimos años,
+	teniendo aplicación en algunos campos como la	visión artificial, la demostración de
+	teoremas, el procesamiento de información	expresada mediante lenguajes humanos, la
+	clasificación de imágenes y patrones, etc.
+
+	El modelado de sistemas, como uno de los problemas de mayor interés en la
+	actualidad, también está siendo abordado por la AI. Los modelos son
+	abstracciones de la realidad que pueden ser aplicados para mejorar nuestra
+	comprensión de fenómenos en el mundo. De forma general, existen dos maneras de
+	abordar el problema. La primera, de carácter deductivo, consiste básicamente en la
+	división del sistema en subsistemas que son modelados a partir de
+	leyes físicas y relaciones previamente aceptadas como hipótesis, usando como
+	herramienta fundamental las ecuaciones diferenciales. La segunda aproximación es
+	de naturaleza inductiva, ya que realiza la estimación de los modelos a partir
+	del análisis y medida de los datos. Este proceso de estimación se denomina
+	comúnmente aprendizaje. En este contexto, aprendizaje significa obtener una
+	representación de los datos que se pueda usar para diferentes objetivos, como
+	la predicción o la clasificación.
+
+	Si se examinan con atención aquellos problemas
+	que no pueden expresarse a través de un algoritmo, se observará que todos ellos
+	tienen una característica en común: la experiencia. El hombre es capaz de
+	resolver estas situaciones acudiendo a la experiencia acumulada. Así, parece
+	claro, que una forma de aproximarse al problema consista en la construcción de
+	sistemas que sean capaces de reproducir esta característica humana. 	Las Redes
+	Neuronales Artificiales (\textit{Artificial Neural Networks}, ANNs)
+	\cite{Bishop1995,Haykin1998}, se sitúan dentro de
+	esta forma de
+	abordar el problema. Dichas redes son una forma de emular ciertas
+	características propias de los humanos, como la capacidad de
+	memorizar y de asociar hechos, y a
+	``grosso modo`` no son más que un modelo artificial y simplificado del cerebro
+	humano, cuya unidad básica de procesamiento está inspirada en la célula
+	fundamental del sistema nervioso: la neurona, que es el ejemplo más perfecto del
+	que disponemos para un sistema que es capaz de adquirir conocimiento a través de
+	la experiencia.  Es bien conocido que los humanos son capaces de aprender.
+	Aprendizaje significa que aquellos problemas que inicialmente no pueden
+	resolverse, se pueden resolver después al obtener más información acerca de los
+	mismos. Así, las ANNs constan de unidades de procesamiento que intercambian
+	datos o información, se utilizan para reconocer patrones, incluyendo imágenes,
+	manuscritos y secuencias de tiempo,  y tienen capacidad de aprender y mejorar su
+	funcionamiento.
+
+	La  resolución de  problemas donde es necesaria una predicción o una
+	clasificación de patrones, se ha abordado clásicamente  usando  técnicas  de
+	optimización minimizando una determinada función de error, previo
+	establecimiento por parte del decisor del tipo de modelo a aplicar. En muchas
+	situaciones, debido a la complejidad de los factores que intervienen en los
+	distintos fenómenos, el modelo a aplicar es no lineal, y además suele presentar
+	una  alta  dimensionalidad  en  las  variables  independientes o variables de
+	entrada del modelo, lo que	complica  considerablemente  el proceso de modelado.
+
+	Los  modelos  de 	clasificación 	obtenidos mediante  ANNs	son	abstracciones 	de  la
+	realidad  que  se pueden aplicar para 	mejorar nuestra	comprensión de	la misma, y que
+predicen la clase de
+	pertenencia de los  	patrones  a  los 	que se aplican \cite{Paliwal2009},  a  partir
+	de  los  valores	numéricos obtenidos para  las	variables independientes de estudio.
+	Con el objeto de lograr el aprendizaje con ANNs, antes de enfrentarlas a
+	un problema real, se requiere un proceso previo de entrenamiento   que
+	nos asegure que van a tener una buena capacidad de  predicción  para  todos  los
+	casos,  es	decir,  que  el  modelado  sea eficaz. Para llevar a cabo este
+	entrenamiento se	suele hacer uso de distintos métodos de búsqueda local y/o global de
+	los	modelos \cite{Haykin2008}, tanto en relación a los pesos de la red (valor  de
+	las   conexiones) como  a  su  estructura (número de capas, número de nodos, número de
+   conexiones).
+
+	Los algoritmos de búsqueda  local (\textit{Local Search}, LS), entre los que cabe
+	destacar el algoritmo de retropropagación del error BP (\textit{Back Propagation})
+\cite{Chauvin1995}, presentan un
+	problema	fundamental, y es el posible estancamiento en óptimos locales	del espacio
+	de búsqueda y la posibilidad de una convergencia lenta, sobre todo si los valores
+	iniciales están alejados del óptimo global. Para resolver los problemas asociados al
+	algoritmo de retropropagación	del error, se han considerado diferentes métodos
+	heurísticos \cite{Walczak1999,Abraham2000,Glover2003} para entrenar
+	ANNs (ver \cite{Kordik2010,Alba2006} para una revisión detallada): Enfriamiento
+	simulado (\textit{Simulated Annealing}, SA), la búsqueda  tabú	(\textit{Tabu
+	Search}, TS), la búsqueda dispersa	(\textit{Scatter Search}, SS), los	enjambres de
+	partículas (\textit{Particle Swarm},	PS) y los	algoritmos
+	evolutivos (\textit{Evolutionary Algorithms}, EAs), siendo éstos	últimos los	que más
+	impacto han	tenido en el diseño de ANNs en los últimos años.
+
+	Los Algoritmos Evolutivos (\textit{Evolutionary Algorithms}, EAs)
+\cite{Back1996,Back1997,Eiben2003},
+	son métodos heurísticos	de búsqueda global y una de las principales  alternativas  a
+	los  algoritmos	de  LS  para  el entrenamiento  de  ANNs.
+	Este tipo de 	algoritmos, incorpora la semántica de la evolución natural a los
+	procesos de	optimización,  convirtiéndose  en  métodos  estocásticos  de  búsqueda
+	ciega
+	de  soluciones  cuasi-óptimas.  Para  trabajar  mantienen  una  población  de
+	individuos,  en nuestro  caso,  un  conjunto  de ANNs  (soluciones  al
+	problema).  Éstas  son  sometidas  a  una  serie  de transformaciones  para
+	obtener nuevas soluciones, y a un proceso de selección orientado a favorecer a
+	los mejores modelos. De esta forma,  las  ANNs  irán  evolucionando  para  ir
+	mejorando  y  llegar  a obtener  una  solución aceptable al problema. Por lo
+	tanto, los EAs, son capaces de realizar	búsquedas globales basadas en poblaciones sin
+	quedar atrapados en 	óptimos locales, lo que	los hace susceptibles de ser utilizados
+	para la optimización de	ANNs.
+
+	Frecuentemente,  se tienen que tratar un  número  de  objetivos  contrapuestos
+   para  obtener una solución viable a un problema, a menudo sin ningún
+	conocimiento "a priori" de cómo los objetivos interactúan  entre  sí.  Una  forma
+	de  resolver  este  tipo  de  situaciones es  por  medio  de algoritmos de
+	optimización multi-objetivo. Estos métodos pueden utilizarse conjuntamente con
+	EAs, lo que se denomina Algoritmos Evolutivos Multi-objetivo (Multi-Objective
+	Evolutionary Algorithms, MOEAs) \cite{Deb2004, Coello2007}, muy
+	utilizados también en el diseño de modelos de ANNs cuando el tipo de problema
+	lo requiere.
+
+	Una técnica en la utilización de AEs mono-objetivo o	multi-objetivo para la
+	obtención de modelos de ANNs es la incorporación de	métodos de LS. Esto se	conoce
+	como Algoritmos	Meméticos (\textit{Memetic Algorithms}, MAs)
+	\cite{Smith2007,Cotta2001} o híbridos
+	\cite{Grosan2007,Blum2008}, y constituyen una de	las
+	técnicas	que se han utilizado utilizadas en la actualidad en	el
+	entrenamiento de ANNs
+	\cite{Abraham2000b,ACMartinez2006}. A ''grosso	modo``,	se	pretende que los EAs
+	converjan hacia soluciones aceptables del problema	(búsqueda	global), mientras que
+	los métodos de búsqueda	local se encargan de	encontrar la	mejor solución posible, o la
+	más cercana al	óptimo global en pequeñas	regiones del	espacio de búsqueda.
+
+	Teniendo en cuenta todo lo anteriormente comentado, en esta tesis se aborda como
+	objetivo principal, por ser una de las técnicas más utilizadas en los últimos
+	años, la multi-clasificación de patrones a partir de MOEAs. Para ello utilizaremos una
+	dos objetivos contrapuestos que se detallarán a lo largo de esta memoria.
+\newpage
+\section{Objetivos de esta tesis}
+	\noindent Los objetivos principales que se persiguen en esta tesis doctoral son los
+	siguientes:
+ 	\begin{enumerate}
+%  	 \item Realización de un estudio y revisión bibliográfica de las técnicas utilizadas
+% 	con	ANNs de una sola capa oculta para la clasificación de patrones, especialmente de
+% 	los métodos empleados en	los	últimos años, EAs mono-objetivo y MOEAs.
+	\item Obtención de multi-clasificadores que
+   obtengan un porcentaje de patrones correctamente clasificados en generalización, que
+   sea lo más	equilibrado	posible en cada una de las clases que de un determinado
+	problema, siempre y	cuando se consideren que todas las clases de un mismo
+	problema son igual de importantes.
+	\item Estudio de	diferentes funciones de	rendimiento a la hora de
+	crear modelos de red con MOEAs para multi-clasificación, concretamente el número de
+	patrones correctamente clasificados, $C$, y la mínima sensibilidad de todas las clases
+	de un determinado problema, $MS$, definida ésta ultima como la clase con menor
+	porcentaje de	patrones correctamente clasificados de todas las que tiene dicho
+	problema.
+	\item Utilización de diferentes tipos de unidades de base en la creación de modelos de
+	red,	unidades de tipo sigmoide, unidades de tipo radial, unidades de tipo producto, e
+	incluso	hibridación de las mismas en la capa oculta de la red.
+	\item Desarrollo de modelos de red a partir de EAs mono-objetivo, con el fin de poder
+	comparar dichos modelos con otras técnicas de la literatura y poder aplicarlo
+	posteriormente a los MOEAs desarrollados. Dichos algoritmos deben diseñar	de manera
+	simultanea la 	topología del modelo (número de neuronas en capa oculta y número de
+	conexiones) y entrenar los pesos de la red.
+	\item Desarrollo de modelos de red a partir de MOEAs junto con diversas técnicas de
+	la literatura y los dos objetivos estudiados, $C$, y $MS$. Los MOEAs deben diseñar de
+	manera simultanea la topología del	modelo y entrenar los pesos de la red.
+   \item Hibridación de las metodologías desarrolladas introduciendo procedimientos de
+	búsqueda local.
+	\item Desarrollo de un clasificador a partir de un conjunto de
+	clasificadores	(\textit{ensemble}), de manera que se mejore la capacidad de
+	generalización del mismo. Análisis de diferentes
+	formas	de mejorar la	diversidad y precisión de un \textit{ensemble}.
+	 \item Estudio, análisis y desarrollo de MOEAs para la obtención de
+	modelos de red para multi-clasificación de patrones, usando un AE de
+	Evolución	Diferencial (\textit{Differential Evolution}, DE) \cite{Price2005}, metodología que
+	se está utilizado mucho en los últimos años.
+% 	\item Como línea futura, realizar un estudio, análisis y desarrollo de nuevas
+% 	metodologías de selección y creación de padres virtuales en DE, usando intervalos de
+% 	confianza basados en valores extremos y en	la	distribución de	los mejores
+% 	individuos de la población.
+	 \item Estudio de diferentes formas de representación de los resultados obtenidos de los
+	frentes de Pareto con los MOEAS desarrollados, como una
+	alternativa a la representación con curvas ROC  (\textit{Receiver	Operating
+	Characteristic})	\cite{Fawcett2006}, que son gráficas en dos dimensiones en la que se
+	representan los errores de clasificación de la	clase negativa y la clase positiva,
+	para un problema de clasificación binario.
+	 \item Aplicación de las metodologías desarrolladas a conjuntos de datos del
+	repositorio de aprendizaje automático de Irvine, en la Universidad de California
+	(\textit{UC Irvine Machine Learning Repository}, UCI) \cite{UCI2007}). Aplicación a
+	problemas reales, como el crecimiento microbiano.
+ 	 \item Inclusión de alguno de los métodos desarrollados en la plataforma
+ 	 KEEl (\textit{Knowledge Extraction based on Evolutionary Learning}, KEEL) y creación de un
+ 	 	módulo educacional \cite{Keel2009} (ver apéndice \ref{anexo}).
+	\end{enumerate}
+
+% 	A continuación y una vez descritos los objetivos de esta tesis doctoral, se exponen
+% 	las aportaciones fundamentales incluidas en esta memoria:
+% 	\begin{enumerate}
+% 	\item Análisis y descripción de los aspectos más importantes en el uso de algoritmos
+% 	evolutivos mono-objetivo y multi-objetivo híbridos, funciones de aptitud, DE y
+% ensembles para el diseño de modelos de red para clasificación de
+% 	patrones.
+% 	\item Implementación de varias versiones de un AE memético mono-objetivo usando
+% 	modelos de red puros e híbridos en capa oculta. Los resultados obtenidos están en
+% 	consonancia con los	de otras	técnicas	frecuentemente citadas en Aprendizaje
+% Automático (\textit{Machine Learning}, ML).
+% 	\item Implementación de un MOEA	memético basado en dominancia de Pareto para diseñar
+% 	modelos de	red para clasificación	de patrones.
+% 	\item Implementación de varias versiones de un MOEA memético basado
+% 	en dominancia de	Pareto y en la DE.
+% 	\item Futura obtención de	padres virtuales en DE basados en
+% 	los valores extremos y mejores individuos de la 	población.
+% 	\item Estudio y análisis del uso de la mínima sensibilidad en la	clasificación de
+% 	patrones	para problemas multiclase, como alternativa al uso de	curvas ROC y otras
+% 	medidas
+% 	de	rendimiento. Utilización de dicha función de aptitud en los algoritmos
+% 	desarrollados obteniéndose resultados satisfactorios.
+% 	\item Nueva representación en dos dimensiones de la bondad de un clasificador
+% 	mediante la optimización simultánea de la precisión y la mínima sensibilidad.
+% 	\item Aplicación de los algoritmos implementados en la resolución de problemas de
+% 	clasificación reales de microbiología predictiva, teledetección y predicción de viento.
+% % 	\item Inclusión los algoritmos implementados en KEEL,
+% % 	ampliando de esta manera el abanico de técnicas de las que dispone la herramienta,
+% % 	proporcionándole una mayor riqueza para labores científicas.
+% 	\end{enumerate}
+\newpage
+\section{Estructura de la memoria}
+\noindent La  memoria de esta tesis se organiza de la siguiente manera:
+
+	En el capítulo 2 describimos las medidas de rendimiento más utilizadas a la hora de
+	medir el rendimiento de un clasificador, tanto para problemas binarios como multi-clase.
+	Proponemos el uso de la mínima sensibilidad, $MS$, junto con la precisión, $C$, como objetivos a
+	optimizar en la obtención de clasificadores multi-clase.	Se estudian las
+	relaciones entre ambas medidas y mostramos una nueva representación gráfica para
+	interpretar, de forma sencilla, el rendimiento de un multi-clasificador.
+
+	En el capítulo 3 hacemos una revisión general sobre las ANNs, taxonomía y métodos de
+	entrenamiento más utilizados, y se definen y describen los modelos funcionales
+	utilizados en	el resto de esta tesis.
+
+	En el capítulo 4 introducimos las ANNs evolutivas
+	mono-objetivo y se describimos nuestro algoritmo CBFEP (\textit{Combined
+	Basis Function Evolutionary Programing}), como método de obtención de modelos
+	de	red de tipo híbrido en capa oculta.
+
+	En el capítulo 5 hacemos una introducción a la computación evolutiva multi-objetivo y su uso con
+	ANNs, y se detallamos dos MOEAs y su implementación, como nuevos métodos de obtención de
+	multi-clasificadores: un algoritmo memético basado en NSGAII (\textit{Memetic Pareto Non
+	dominated	Sorting II}, MPENSGAII), y un proceso de obtención de \textit{ensembles} a
+	partir de	MPENSGAII. Ambos métodos se basan en el uso conjunto de $C$ y $MS$ como funciones
+	objetivo a optimizar.
+
+	La DE como método de optimización fuertemente utilizado en los
+	últimos años junto con ANNs se describe en el capítulo 6. También detallamos
+	un algoritmo híbrido que utiliza la DE, y que hemos llamado (\textit{Hybrid Pareto Differential
+	Evolution},	HPDE).
+
+	En el capítulo 7 aplicamos nuestro algoritmos MPENSGAII a la microbiología predictiva.
+
+	Finalmente, en el capítulo 8, mostramos las principales conclusiones obtenidas en la
+	elaboración de esta tesis doctoral, los trabajos asociados a la misma y las pautas de
+	nuestro trabajo futuro.
+
+	Como apéndice hablamos de la herramienta Keel \footnote{http://www.keel.es}
+	(\textit{Knowledge Extraction based on Evolutionary Learning}) \cite{Keel2009}, la cual
+	permite ejecutar	múltiples algoritmos evolutivos para problemas de minería de datos,
+	incluyendo regresión, clasificación, \textit{clustering}, etc, además de disponer de una gran
+	colección de algoritmos de extracción de conocimiento. Hemos
+	introducido en Keel, el algoritmo de búsqueda local iRprop+ (\textit{Improved Resilient
+	Back-propagation}), que es una mejora del original Rprop \cite{Riedmiller1993}, y que hemos
+	utilizado en algunos de nuestros algoritmos, adaptándolo previamente a nuestras funciones
+	objetivo a	optimizar. También nos referimos al módulo educacional que hemos introducido en Keel,
+		que puede	ser de gran utilidad	para el alumnado interesado en el tipo de algoritmos y
+	técnicas que ofrece	la herramienta (ver apéndice \ref{anexo}).

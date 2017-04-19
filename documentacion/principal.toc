@@ -1,0 +1,81 @@
+\select@language {spanish}
+\contentsline {chapter}{\IeC {\'I}ndice de Figuras}{\es@scroman {vi}}
+\contentsline {chapter}{\IeC {\'I}ndice de Tablas}{\es@scroman {vii}}
+\contentsline {chapter}{\numberline {1}Introducci\IeC {\'o}n a WEKA}{1}
+\contentsline {section}{\numberline {1.1}Filtros no supervisados}{1}
+\contentsline {subsection}{\numberline {1.1.1}Normalize}{1}
+\contentsline {subsection}{\numberline {1.1.2}ReplaceMissingValues}{1}
+\contentsline {subsection}{\numberline {1.1.3}RemoveUseless}{2}
+\contentsline {subsection}{\numberline {1.1.4}PrincipalComponents}{3}
+\contentsline {subsection}{\numberline {1.1.5}RandomProjection}{3}
+\contentsline {subsection}{\numberline {1.1.6}NominalToBinary}{3}
+\contentsline {subsection}{\numberline {1.1.7}RemoveMissclassified}{4}
+\contentsline {subsection}{\numberline {1.1.8}RemovePercentage}{4}
+\contentsline {subsection}{\numberline {1.1.9}Resample}{4}
+\contentsline {section}{\numberline {1.2}Filtros supervisados}{6}
+\contentsline {subsection}{\numberline {1.2.1}AttributeSelection}{6}
+\contentsline {subsection}{\numberline {1.2.2}Discretize}{6}
+\contentsline {subsection}{\numberline {1.2.3}NominalToBinary}{6}
+\contentsline {subsection}{\numberline {1.2.4}SpreadToBinary}{7}
+\contentsline {subsection}{\numberline {1.2.5}ClassBalancer}{7}
+\contentsline {subsection}{\numberline {1.2.6}Resampler}{7}
+\contentsline {section}{\numberline {1.3}Base de datos Wine}{8}
+\contentsline {subsection}{\numberline {1.3.1}Detalles de la base de datos}{8}
+\contentsline {subsection}{\numberline {1.3.2}Modificaci\IeC {\'o}n del fichero con nombres de atributo descriptivos}{8}
+\contentsline {subsection}{\numberline {1.3.3}Descripci\IeC {\'o}n de atributos y clases}{8}
+\contentsline {subsection}{\numberline {1.3.4}Tratamiento de elementos perdidos}{8}
+\contentsline {subsection}{\numberline {1.3.5}Diferencia entre Distinct y Unique}{8}
+\contentsline {subsection}{\numberline {1.3.6}Eliminar atributos identificadores}{8}
+\contentsline {subsection}{\numberline {1.3.7}Relaciones visualmente significativas en entorno Visualice}{8}
+\contentsline {section}{\numberline {1.4}Aplicaci\IeC {\'o}n de 6 filtros a la base de datos}{9}
+\contentsline {subsection}{\numberline {1.4.1}Filtro de selecci\IeC {\'o}n de caracter\IeC {\'\i }sticas}{9}
+\contentsline {subsection}{\numberline {1.4.2}Filtro de selecci\IeC {\'o}n de patrones}{9}
+\contentsline {subsection}{\numberline {1.4.3}Filtro de filters/supervised/attribute/*}{9}
+\contentsline {subsection}{\numberline {1.4.4}Filtro de filters/supervised/instance/*}{9}
+\contentsline {subsection}{\numberline {1.4.5}Filtro de filters/unsupervised/attribute/*}{9}
+\contentsline {subsection}{\numberline {1.4.6}Filtro de filters/unsupervised/instance/*}{10}
+\contentsline {section}{\numberline {1.5}Conversi\IeC {\'o}n de todo atributo nominal a codificaci\IeC {\'o}n binaria}{11}
+\contentsline {section}{\numberline {1.6}Divisi\IeC {\'o}n de la base de datos en particiones}{12}
+\contentsline {subsection}{\numberline {1.6.1}Divisi\IeC {\'o}n en 10-Holdout 75-25}{12}
+\contentsline {subsection}{\numberline {1.6.2}Divisi\IeC {\'o}n en 10-Fold}{12}
+\contentsline {chapter}{\numberline {2}Clasificaci\IeC {\'o}n y Regresi\IeC {\'o}n en WEKA}{13}
+\contentsline {section}{\numberline {2.1}Algoritmo IB1 con 10-fold crossvalidation}{13}
+\contentsline {subsection}{\numberline {2.1.1}Visualizaci\IeC {\'o}n de la clasificaci\IeC {\'o}n}{13}
+\contentsline {subsection}{\numberline {2.1.2}Interpretaci\IeC {\'o}n de los resultados}{13}
+\contentsline {section}{\numberline {2.2}Algoritmo IBK (k=1, k=3, k=5) con 10-fold crossvalidation a 1}{14}
+\contentsline {subsection}{\numberline {2.2.1}C\IeC {\'a}lculo de media y desviaci\IeC {\'o}n t\IeC {\'\i }pica de las medidas}{14}
+\contentsline {subsection}{\numberline {2.2.2}Visualizaci\IeC {\'o}n de la clasificaci\IeC {\'o}n}{14}
+\contentsline {subsection}{\numberline {2.2.3}Interpretaci\IeC {\'o}n de los resultados}{14}
+\contentsline {section}{\numberline {2.3}Base de datos house.arff}{15}
+\contentsline {subsection}{\numberline {2.3.1}Carga de la base de datos}{15}
+\contentsline {subsection}{\numberline {2.3.2}Variable Granite}{15}
+\contentsline {subsection}{\numberline {2.3.3}Variable binaria Bathroom}{15}
+\contentsline {subsection}{\numberline {2.3.4}Variable Bedrooms}{15}
+\contentsline {subsection}{\numberline {2.3.5}Variable HouseSize}{15}
+\contentsline {section}{\numberline {2.4}Base de datos autoMpg.arff}{16}
+\contentsline {subsection}{\numberline {2.4.1}Aplicaci\IeC {\'o}n del algoritmo LinearRegression con un 80-20}{16}
+\contentsline {subsection}{\numberline {2.4.2}Resultados obtenidos}{16}
+\contentsline {subsection}{\numberline {2.4.3}Atributo que aporta m\IeC {\'a}s informaci\IeC {\'o}n de la variable dependiente}{16}
+\contentsline {subsection}{\numberline {2.4.4}Atributo que no aporta informaci\IeC {\'o}n al modelo}{16}
+\contentsline {subsection}{\numberline {2.4.5}Errores cometidos}{16}
+\contentsline {subsection}{\numberline {2.4.6}Modificaci\IeC {\'o}n del parametro attributteSelectionMethod}{16}
+\contentsline {section}{\numberline {2.5}M\IeC {\'e}todo SimpleLinearRegression en base de datos autoMpg.arff}{17}
+\contentsline {section}{\numberline {2.6}Algoritmos Logistic y SimpleLogistic}{18}
+\contentsline {subsection}{\numberline {2.6.1}An\IeC {\'a}lisis}{18}
+\contentsline {subsection}{\numberline {2.6.2}Visualizaci\IeC {\'o}n gr\IeC {\'a}fica de errores cometidos}{18}
+\contentsline {subsection}{\numberline {2.6.3}An\IeC {\'a}lisis de par\IeC {\'a}metros}{18}
+\contentsline {chapter}{\numberline {3}MOEA mem\IeC {\'e}tico utilizando evoluci\IeC {\'o}n diferencial}{19}
+\contentsline {section}{\numberline {3.1}Introducci\IeC {\'o}n a la evoluci\IeC {\'o}n diferencial}{19}
+\contentsline {subsection}{\numberline {3.1.1}Variantes de la evoluci\IeC {\'o}n diferencial}{22}
+\contentsline {section}{\numberline {3.2}Evoluci\IeC {\'o}n diferencial para optimizaci\IeC {\'o}n multi-objetivo utilizando el concepto de dominacia de Pareto}{26}
+\contentsline {section}{\numberline {3.3}Evoluci\IeC {\'o}n diferencial de Pareto con MOANNs}{28}
+\contentsline {section}{\numberline {3.4}Caminos futuros en la evoluci\IeC {\'o}n diferencial multi-objetivo}{32}
+\contentsline {section}{\numberline {3.5}El algoritmo MPANN}{33}
+\contentsline {section}{\numberline {3.6}El algoritmo MPDE}{38}
+\contentsline {subsection}{\numberline {3.6.1}Funciones objetivo}{39}
+\contentsline {subsection}{\numberline {3.6.2}Operadores}{39}
+\contentsline {subsection}{\numberline {3.6.3}B\IeC {\'u}squeda local}{39}
+\contentsline {subsection}{\numberline {3.6.4}Etapas y aspectos relevantes de MPDE}{40}
+\contentsline {subsection}{\numberline {3.6.5}Diferencias con el algoritmo MPANN}{43}
+\contentsline {subsection}{\numberline {3.6.6}Dise\IeC {\~n}o experimental}{44}
+\contentsline {subsection}{\numberline {3.6.7}Resultados}{46}

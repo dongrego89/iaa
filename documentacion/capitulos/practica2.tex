@@ -1,0 +1,121 @@
+\chapter{Clasificación y Regresión en WEKA}
+\
+\section{Algoritmo IB1 con 10-fold crossvalidation}
+	\subsection{Visualización de la clasificación}
+	\subsection{Interpretación de los resultados}
+
+\newpage
+\section{Algoritmo IBK (k=1, k=3, k=5) con 10-fold crossvalidation a 1}
+	\subsection{Cálculo de media y desviación típica de las medidas}
+
+	\begin{itemize}
+		\item Accuracy:
+		\item Kappa:
+		\item RMSE:
+		\item F-Measure:
+		\item Media ponderada AUC:
+	\end{itemize}
+
+	\subsection{Visualización de la clasificación}
+	\subsection{Interpretación de los resultados}
+ 
+\newpage
+\section{Base de datos house.arff}
+	\subsection{Carga de la base de datos}
+	
+	\subsection{Variable Granite}
+	\begin{itemize}
+		\item Influencia en el modelo
+		\item Conclusiones
+	\end{itemize}
+	
+	\subsection{Variable binaria Bathroom}
+	\begin{itemize}
+		\item Influencia en el modelo
+		\item Aplicación de algoritmo de regresión lineal
+		\item Conclusiones
+	\end{itemize}
+
+	\subsection{Variable Bedrooms}
+	\begin{itemize}
+		\item Influencia en el modelo
+		\item Conclusiones
+	\end{itemize}
+
+	\subsection{Variable HouseSize}
+	\begin{itemize}
+		\item Influencia en el modelo
+		\item Aportación al modelo de regresión lineal
+		\item Conclusiones
+	\end{itemize}
+
+\newpage
+\section{Base de datos autoMpg.arff}
+	
+	\subsection{Aplicación del algoritmo LinearRegression con un 80-20}
+	\subsection{Resultados obtenidos}
+	\begin{itemize}
+		\item Conclusiones
+		\item Tablas comparativas
+	\end{itemize}
+
+	\subsection{Atributo que aporta más información de la variable dependiente}
+
+
+	\subsection{Atributo que no aporta información al modelo}
+
+
+	\subsection{Errores cometidos}
+	\begin{itemize}
+		\item Visualización
+		\item Representación de las diferentes cruces
+	\end{itemize}
+
+
+	\subsection{Modificación del parametro attributteSelectionMethod}
+	\begin{itemize}
+		\item Conclusión en el nuevo modelo
+		\item Análisis de menor peso de "weight" frente "acceleration"
+	\end{itemize}
+
+\newpage
+\section{Método SimpleLinearRegression en base de datos autoMpg.arff}
+
+	\begin{itemize}
+		\item Respuesta
+		\item Solución
+		\item Visualización
+		\item Comentario de resultados
+	\end{itemize}
+
+\newpage
+\section{Algoritmos Logistic y SimpleLogistic}
+
+	
+	\subsection{Análisis}
+		\begin{itemize}
+			\item Conclusión
+			\item Métricas
+			\item Variables más influyentes (beta)
+			\item Variables no usadas
+			\item Visualización
+			\item Asociación de fórmulas con modelos obtenidos según el algoritmo
+		\end{itemize}
+
+	\subsection{Visualización gráfica de errores cometidos}
+
+	\subsection{Análisis de parámetros}
+
+		\begin{itemize}
+			\item maxBoostingIterations
+				\begin{itemize}
+					\item Análisis
+					\item Modificación
+				\end{itemize}
+
+			\item heuristicStop
+				\begin{itemize}
+					\item Análisis
+					\item Modificación
+				\end{itemize}
+		\end{itemize}

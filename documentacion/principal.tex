@@ -1,0 +1,325 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Tipo de documento. ¿¿¿Capítulos siempre empiezan a la izquierda????
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[11pt,b5paper,openany]{book}
+% ---------------- B5, 176x250 mm --------------------------------------- %
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Paquetes incluidos
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Codificación del fichero
+\usepackage[utf8]{inputenc}
+% Escritura e interpretación de comandos en Español
+\usepackage[spanish]{babel}
+% Uso de palabras acentuadas y simbolos compuestos como un unico caracter
+\usepackage[T1]{fontenc}
+% Para el uso de colores al conventir a pdf por parte de PDFLaTeX.
+\usepackage[pdftex,usenames,dvipsnames]{color}
+% Introduce la bibliografía en el índice
+\usepackage[nottoc]{tocbibind}
+% Modificar el nivel de numeración de secciones, subsecciones, etc
+% Ojo!!!, este paquete tiene que ir antes que el paque subfig!!!
+\usepackage[titles]{tocloft}
+% Paquete para permitir el manejo de imágenes y gráficos. Se compila con PDFLaTeX
+% Se permiten imagenes en jpg y tambien en pdf
+\usepackage[pdftex]{graphicx}
+% Permite colocar varias figuras y tablas en una figura y hacer referencia a ellas
+% como fig 3(a) y fig 3(b)
+\usepackage{subfig}
+% Paquete para cambiar el formato de los capítulos, de las secciones, partes, ...
+\usepackage{titlesec}
+% Paquete que permite el control sobre los apéndices
+\usepackage{appendix}
+% Modificar encabezamientos y pie de páginas
+\usepackage{fancyhdr}
+% Paquete para el manejo de cajas y marcos
+\usepackage{fancybox}
+% Paquete para  la inclusión de código fuente
+\usepackage{listings}
+% Paquete para poder utilizar el comando "\multirow" en las tablas.
+\usepackage{multirow}
+% Paquete para poder escribir en vertical
+\usepackage{rotating}
+% Paquete para colorear las tablas
+\usepackage{colortbl}
+% Paquete para tablas largas de más de una página
+\usepackage{longtable}
+% Página apaisada
+\usepackage{lscape}
+% AMS Math. Para poder hacer fórmulas matemáticas
+\usepackage{amscd,amsmath,amssymb,verbatim}
+% Paquete para añadir letras matemáticas, por ejemplo, numero reales.
+\usepackage{dsfont,textcomp}
+% Para el control de enlaces hipertexto en el documento. Este paquete se cargar el último.
+%\usepackage[pdftex]{hyperref}
+% Paquete para cambiar el espacio entre items de las citas bibliográficas
+\usepackage{natbib}
+% Establece el espacio entre items de las citas
+\setlength{\bibsep}{2pt}
+%Listas personalizables
+\usepackage[ampersand]{easylist}
+%Justificación
+\usepackage[document]{ragged2e}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Nuevos comandos, adaptaciones, espaciado entre párrafos
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% -------------------------------------------------------------------------------------
+% Numeración hasta las subsubsecciones
+\setcounter{secnumdepth}{3}
+% Incluye en el índice hasta las subsubsecciones
+\setcounter{tocdepth}{3}
+% Para cuando quede muy ajustado el número de sección y el texto en el índice.
+%\setlength{\cftsubsubsecnumwidth}{5em}
+% Lo anterior hecho de otra forma sin usar el paquete ``tocloft``
+%\makeatletter
+%	\renewcommand*\l@subsubsection{\@dottedtocline{3}{7em}{5em}}
+%\makeatother
+% -------------------------------------------------------------------------------------
+
+
+% -------------------------------------------------------------------------------------
+% Para cambiar el nombre que pondrá en el Indice de tablas, figuras y apéndice.
+\AtBeginDocument
+{
+	\renewcommand\listtablename{Índice de Tablas}
+	\renewcommand\tablename{Tabla}
+	\renewcommand\listfigurename{Índice de Figuras}
+	\renewcommand{\appendixtocname}{Apéndices}
+	\renewcommand{\appendixpagename}{Apéndices}
+}
+% -------------------------------------------------------------------------------------
+
+
+% Desactiva métodos taquigráficos en Español que pueden molestarnos
+\renewcommand{\shorthandsspanish}{}
+
+
+% -------------------------------------------------------------------------------------
+% Este comando mete una pagina en blanco sin cabeceras ni pie de pagina
+\newcommand{\paginavaciacompleta}{\newpage{\thispagestyle{empty}\cleardoublepage}}
+\newcommand{\paginavaciasincuerpo}{\cleardoublepage}
+% -------------------------------------------------------------------------------------
+
+
+% -------------------------------------------------------------------------------------
+% Refefinición de los comandos \chaptermark y \sectionmark que se encargan
+% de lo que va a aparecer en la cabecera de las paginas a izd y dcha
+% Esto solo vale y se redefine asi si se utiliza el estilo headings
+% \renewcommand{\chaptermark}[1]{%
+% 	\markboth{\small\upshape\scfamily\thechapter. \ #1}{}}
+% \renewcommand*{\sectionmark}[1]{
+% 	\markright{\small\upshape\scfamily\thesection. \ #1}}
+% -------------------------------------------------------------------------------------
+
+
+% -------------------------------------------------------------------------------------
+% Sangría para párrafo, tabulaciones de 1 cm
+\parindent=1.0cm
+% Espacio o separación entre párrafos
+\parskip 1.0ex
+%\parskip=1mm
+% -------------------------------------------------------------------------------------
+
+
+% -------------------------------------------------------------------------------------
+% Margen vertical de salida o ``borde superior de impresion''.
+% Colocado 1.35cm menos de lo que trae el tipo de documento por defecto
+\voffset -1.35cm
+% Aumentamos la altura del texto y la anchura para aprovechar más papel. A partir del
+% ``borde superior  de impresion'' empieza a estirar la altura hacia abajo 2.7cm a partir
+% de la altura  por texto por defecto (lo impone el tipo de documento). Lo mismo para la
+% anchura
+\addtolength{\textheight}{2.7cm}
+\addtolength{\textwidth}{0.5cm}
+% Aumentamos la distancia entre el ``borde izdo de impresion'' y el comienzo del texto en
+% anchura para las impares o a derecha y disminuimos para las pares o a izquierdas
+\addtolength{\oddsidemargin}{0.6cm} %Pares que estan a izquierda
+\addtolength{\evensidemargin}{-1.1cm} %Impares que esta a derecha
+% -------------------------------------------------------------------------------------
+
+
+% -------------------------------------------------------------------------------------
+% Impiden que una página acabe en una línea huérfana o empiece con una línea viuda
+\clubpenalty=10000
+\widowpenalty=1000
+% División correcta de algunas palabras
+\hyphenation{di-fe-ren-cia-les}
+% -------------------------------------------------------------------------------------
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Formato del título de los capítulos
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% FORMATO 1
+\newcommand{\bigrule}{\titlerule[0.5mm]}
+% cambiamos el formato de los capítulos
+\titleformat{\chapter}[display]
+% por defecto se usarán caracteres de tamaño \Huge en negrita
+{\bfseries\Huge}
+{% contenido de la etiqueta
+% línea horizontal
+\titlerule[0.5mm]
+% texto alineado a la izquierda
+\filright
+% "Capítulo" o "Apéndice" en tamaño \Large en lugar de \Huge
+\Large\chaptertitlename\
+% número de capítulo en tamaño \Large
+\Large\thechapter}
+% espacio mínimo entre etiqueta y cuerpo
+{0mm}
+% texto del cuerpo alineado a la izquierda
+{\filright}
+% después del cuerpo, dejar espacio vertical y trazar línea horizontal gruesa
+[\vspace{0.5mm} \bigrule]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%  Unidades frontales del book
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+	\frontmatter
+		% Portada interior
+		\input{./portadaInterior/interior}
+		%\paginavaciacompleta
+		%\input{./portadaInterior/interior_segunda}
+		%\paginavaciacompleta
+		% Firmas
+		%\input{./firmas/firmas}
+	  % \paginavaciacompleta
+		% Subvenciones
+		%\input{./subvencion/subvencion}
+	   %\paginavaciacompleta
+	   % Frase moraleja
+		%\input{./celebres/celebre1}
+	  % \paginavaciacompleta
+		% Dedicatoria
+		%\input{./dedicatorias/dedicatorias}
+	   %\paginavaciacompleta
+		% Agradecimientos
+		%\input{./agradecimientos/agradecimientos}
+	   %\paginavaciacompleta
+		
+		% Tabla de contenidos o Índice
+		\tableofcontents
+		%\paginavaciacompleta
+		% Lista de figuras DESCOMENTAR !!!!
+		\listoffigures
+		%\paginavaciacompleta
+		% Lista de tablas DESCOMENTAR !!!!
+		\listoftables
+		%\paginavaciacompleta
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%  Unidad principal del book
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\mainmatter
+		%------------------------------------------------------------------------------
+		% Reestablecimiento del estilo con cabecera y pie de pagina
+		% Los cambios se deben hacer despues del establecimiento del estilo a fancy
+		\pagestyle{fancy}
+		% Reinicialización y limpieza de los estilos
+		\fancyhf{}
+		% Grosor de línea para la cabecera de las páginas
+      \renewcommand{\headrulewidth}{0.8pt}
+		% Cabecera de las paginas pares (even, E) o a izquierdas
+		%\fancyhead[LE]{\thesection \ Nombre	de la seccion}
+		\fancyhead[LE]{\nouppercase\rightmark\small\upshape}
+		% Cabecera de las paginas impares (odd, O) o a derechas
+		%\fancyhead[RO]{\chaptername \ \thechapter. Nombre del capitulo}
+		\fancyhead[RO]{\nouppercase\leftmark\small\upshape}
+		% Grosor de linea para los pie de pagina
+		\renewcommand{\footrulewidth}{0.6pt}
+		% Pie pagina Pares
+		%\fancyfoot[LE]{%
+		  %\textcolor[rgb]{0.75,0.75,0.75}{\textbf{\textit{Prácticas}}}}
+		%\fancyfoot[RE]{%
+		  %\textcolor[rgb]{0.75,0.75,0.75}{\textbf{\textit{IAA}}}}
+		% Pie pagina Impares
+		%\fancyfoot[LO]{%
+		  %\textcolor[rgb]{0.75,0.75,0.75}{\textbf{\textit{Universidad de Córdoba}}}}
+		%\fancyfoot[RO]{%
+		  %\textcolor[rgb]{0.75,0.75,0.75}{\textbf{\textit{DIAN}}}}
+		% Tanto para pares como para impares
+		\fancyfoot[C]{\thepage}
+		%------------------------------------------------------------------------------
+
+
+		% --------------------------------------------------------------------------------
+		% Tipo de Numeración
+		\pagenumbering{arabic}
+		% Empiezo de conteo a partir de aquí y con el número 1
+		\setcounter{page}{1}
+		% --------------------------------------------------------------------------------
+
+
+		% --------------------------------------------------------------------------------
+		%\linespread{1.3}
+		% A partir de aqui el interlineado será de 1.5. No es aplicable al titulo de una
+      %seccion, subsección, etc, solo al cuerpo que hay dentro de cada una de ellas
+		%\renewcommand*{\baselinestretch}{2} <---- NO FUNCIONA
+		%\linespread{2} <------ NO FUNCIONA
+		% Otras referencias web: Paquete ``doublespace'' y paquete ``setspace.sty''
+		\setlength{\baselineskip}{1.2\baselineskip}
+		%Ahora mismo esta puesta a 1.0, por lo que no hay aumento de espacio en cuanto al
+		%que viene por defecto. Con 1.2 se consigue algo parecido a 1.5 en documentos word
+		% --------------------------------------------------------------------------------
+
+
+		%  -------------------------------------------------------------------------------
+		% Capítulos
+		\input{./capitulos/practica1}
+		\paginavaciacompleta
+		\input{./capitulos/practica2}
+		%\paginavaciacompleta
+		%\paginavaciasincuerpo
+		%\input{./capitulos/precisionsensitividad}
+		%\paginavaciacompleta
+		%\input{./capitulos/redesneuronales}
+		%\paginavaciacompleta
+		%\input{./capitulos/evolutivasmono-objetivo}
+		%\paginavaciacompleta
+		%\input{./capitulos/evolutivasmulti-objetivo}
+		%\paginavaciacompleta
+		\input{./capitulos/evoluciondiferencial}
+		%\paginavaciacompleta
+		%\input{./capitulos/aplicaciones}
+		%\paginavaciacompleta
+		%\input{./capitulos/conclusionesyfuturo}
+		%\paginavaciacompleta
+		%\input{./capitulos/anexo}
+		%\paginavaciacompleta
+		%  -------------------------------------------------------------------------------
+		% APENDICES
+		%\renewcommand{\appendixname}{Apéndice}
+		%\renewcommand{\thechapter}{A}
+		% DESCOMENTAR LAS 4 SIGUIENTES
+		%\appendix
+		%\appendixpage
+		%\addappheadtotoc
+		%\input{./capitulos/apendice}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%  Unidad posterior del book
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\backmatter
+		%  -------------------------------------------------------------------------------
+		% Apéndices del documento
+		%\appendix
+		% Paginado del apéndice
+		%\appendixpage \addappheadtotoc
+		% Apéndice para la evolucion diferencial
+		%\input{./anexos/evoluciondiferencial}
+		%\paginavaciacompleta
+		% -------------------------------------------------------------------------------
+
+      %\include{anexo}
+		%  -------------------------------------------------------------------------------
+		% Localizacion de Bibliografía .bib para BibTex DESCOMENTAR LAS 2 de BIBLIOGRAFIA
+		%\bibliography{./bibliografia/tesis}
+		% Estilo de la Bibliografía conforme aparece referenciada en el documento
+		%\bibliographystyle{unsrt}
+		%-------------------------------------------------------------------------------
+
+  \paginavaciacompleta
+\end{document}

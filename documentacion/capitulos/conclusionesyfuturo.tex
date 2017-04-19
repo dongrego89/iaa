@@ -1,0 +1,341 @@
+\paginavaciasincuerpo
+\chapter{Comentarios finales}
+\noindent En este capítulo exponemos las conclusiones obtenidas en este trabajo de tesis,
+las
+publicaciones asociadas a la misma, y las líneas futuras en la que vamos a trabajar a corto o medio
+plazo.
+
+\section{Conclusiones}
+\begin{itemize}
+	\item Hemos realizado un estudio de las técnicas de multi-clasificación
+		de patrones utilizando modelos de ANNs entrenados mediante EAs,  tanto a nivel mono-objetivo
+	como multi-objetivo,	incidiendo en esta última propuesta. Este estudio se
+	ha incluido en esta tesis con una revisión de trabajos previos realizados en este
+	área, justo
+	antes de explicar cada uno de los algoritmos que hemos desarrollado.
+
+	\item Hemos estudiado las métricas que usualmente se utilizan en la clasificación de
+	patrones con
+	ANNs y hemos propuesto una nueva forma de evaluar la precisión de un multi-clasificador
+	mediante las
+	métricas de precisión, $C$ y de mínima sensibilidad, $MS$ en un marco
+	multi-objetivo. La precisión no puede capturar todos los aspectos de comportamiento	de
+	dos
+	clasificadores diferentes \cite{Provost1997,Provost1998}, y no es
+	suficiente, en algunos casos, para	determinar la calidad de un clasificador. Si se
+	asume que todos los errores de clasificación son igualmente costosos y que no hay
+	preferencia ni penalización para un determinado conjunto	de patrones, un buen
+   clasificador	debería obtener un alto nivel de precisión global, así como un aceptable
+	nivel de	precisión para cada clase, aspecto muy importante en medicina y en
+	aplicaciones
+	como la microbiología predictiva.
+
+	\item Hemos desarrollado un algoritmo evolutivo mono-objetivo llamado CBFEP
+(\textit{Combined
+	Basis Function Evolutionary Programing}) para multi-clasificación de	patrones, que optimiza
+	simultáneamente la topología y los pesos de cada ANN, usando un EA e	introduciendo en la capa
+	oculta diferentes tipos de funciones de base (SUs, PUs y RBFs).
+
+	Determinar cuál es la mejor configuración de funciones de base en la capa oculta depende, en gran
+	medida, de la estructura del conjunto de	datos, pero en general, los modelos híbridos en
+	cuanto a funciones de base SRBF (SUs+RBFs)	alcanzan una precisión mayor que los modelos 	PRBF
+	(PUs+RBFs), especialmente en conjuntos de datos
+	con dos clases, donde solamente existe	una función discriminante. La capacidad de generalización
+	utilizando modelos con funciones	de base de tipo local y de tipo global (por ejemplo, modelos
+	SRBF o PRBF) es similar o mayor que la capacidad de generalización de modelos puros formados
+	solamente por PUs, SUs o RBFs. Por otra parte, la hibridación	de dos funciones de base de tipo
+	proyección (PUs y SUs) no presenta	mejores resultados en precisión que las restantes
+	hibridaciones, aunque si tienen un	número más bajo de conexiones, permitiendo modelos más
+	interpretables sin disminuir excesivamente la precisión del multi-clasificador.
+% 	La capacidad de generalización de los modelos PSU (PUs+SUs) es similar a la que se ha obtenido
+% 	con sus correspondientes modelos puros (solo PUs o solo SUs). En general, el número de conexiones
+% 	de los modelos puros	formados con PUs son siempre menores que en los demás modelos y el número de
+% 	conexiones en modelos híbridos que usan PUs, como PRBF (PUs+RBF) y PSU (PUs +SUs) son
+% 	menores que las que se obtienen con un modelo híbrido SRBF (SUs+RBF).
+
+	\item Hemos desarrollado un MOEA basado en el concepto de dominancia de Pareto a partir del
+	algoritmo NSGAII, al que hemos llamado MPENSGAII (\textit{Memetic Pareto NSGAII}). MPENSGAII
+	se encarga de utilizar las funciones de aptitud de entropía, $E$ y de mínima
+	sensibilidad, $MS$, para guiar al
+   algoritmo en entrenamiento y obtener  modelos de red para multi-clasificación de
+	patrones en generalización dentro del espacio $(MS,C)$, de manera que combinen
+	un alto nivel  de clasificación con un buen nivel de clasificación por clase. El
+	algoritmo MPENSGAII también optimiza de manera conjunta la topología y los pesos de red. Los
+	resultados obtenidos son muy prometedores.
+
+	\item Los MOEAs desarrollados incorporan el algoritmo iRprop+ como LS, el
+	cual se ha adaptado a las nuevas métricas utilizadas para guiar dichos MOEAS ($E$ y
+	$MS$).
+
+	\item Se ha desarrollado un conjunto de clasificadores o \textit{ensemble}  que intenta obtener
+	un buen equilibrio entre diversidad y precisión. Los resultados obtenidos como primera
+	aproximación a este tipo de técnicas son buenos.
+
+	\item Hemos desarrollado un MOEA basado en el concepto de dominancia de Pareto utilizando la DE.
+	Al algoritmo desarrollado le hemos llamado MPDE (\textit{Memetic Pareto Differential
+	Evolution}), y mejora sustancialmente a otros algoritmos de la literatura como el algoritmo
+	MPANN. MPDE al igual que los demás MOEAs desarrollados en esta tesis está
+	hibridado con un procedimiento de LS, utilizando el algoritmo iRprop+. También
+	evoluciona de	manera conjunta la topología y pesos de la red, y el coste computacional
+asociado a
+	la	obtención del frente de Pareto final es mucho menor que en otros algoritmos de la
+	literatura, ya que hemos utilizado una manera más "relajada" de incorporar y sustituir
+	individuos de la población de una generación a otra. Los resultados obtenidos también son muy
+	prometedores.
+
+	\item La manera de representar gráficamente los resultados obtenidos con los MOEAs desarrollados,
+	se muestran en gráficas de entrenamiento y generalización usando la región
+	factible (sección \ref{propiedades} del capítulo \ref{medidasRendimiento}) y se presenta
+	como una alternativa a las curvas ROC pudiéndose utilizar en problemas multi-clase. Trabajar con
+	más
+	de dos objetivos con curvas ROC tiene la desventaja de que el número	de dimensiones de las
+	representaciones gráficas aumenta, y por tanto es más difícil su análisis e
+	interpretación. Sin embargo, nuestras gráficas bidimensionales permiten una lectura más
+	sencilla y rápida del rendimiento de un multi-clasificador.
+
+	\item Hemos aplicado el algoritmo MPENSGAII desarrollado a la
+	predicción de crecimiento	microbiano, debido a la demanda de los expertos en alimentación de
+	contar con productos	alimenticios más	saludables. Los modelos obtenidos
+	predicen, a	partir de factores medioambientales de envasado y/o conservación, si un patógeno va a
+	crecer o no en función de los valores
+	de esas variables. Los conjuntos de datos utilizados para testar nuestro algoritmo son los
+	microorganismos que producen más trastornos gastrointestinales en nuestro organismo,
+	concretamente los	patógenos \textit{Listeria Monocytogenes}, \textit{Escherichia Coli R31},
+	\textit{Staphylococcus	Aureus} y \textit{Shiguella Flexneri}. Los datos de estos patógenos se
+	han dividido mediante un diseño factorial fraccional, en un conjunto de datos de entrenamiento y
+	otro de generalización para entrenar	y validar nuestros	modelos de red.
+
+	Los resultados estadísticos obtenidos y los test de comparaciones múltiples analizados muestran
+	que nuestro método es muy competitivo para ser considerado en microbiología predictiva, donde hay
+	una alta necesidad de obtener una buena precisión en la clasificación, tanto para el
+	crecimiento como para el no crecimiento. Este enfoque puede ayudar a los investigadores de
+	microbiología predictiva a definir mejor los límites de crecimiento de los microorganismos, y
+	también para modelar la	variabilidad microbiana asociada a las condiciones de envasado y
+	conservación. En conclusión, la
+	utilización de este método	constituye una valiosa alternativa para la creación de modelos
+	matemáticos que determinen la probabilidad de crecimiento microbiano bajo un determinado conjunto
+	de condiciones.
+
+   \item Hemos incrementado el número de algoritmos de la herramienta software Keel (ver apéndice
+	\ref{anexo}) con	la inclusión y adaptación del algoritmo iRprop+ como método de entrenamiento de
+	ANNs (tanto con funciones de base SUs como con PUs), y hemos	desarrollado una parte
+dedicada a la enseñanza, de forma que los alumnos puedan
+	obtener visualmente	los resultados que un determinado algoritmo produce a lo largo de
+la evolución
+	o del tiempo,	mostrando los resultados finales de manera local, en la misma máquina donde se
+	instala la herramienta. Normalmente con Keel se trabaja diseñando baterías de	pruebas y de
+	algoritmos para lanzarlas en maquinas diferentes a donde está instalado el software, por
+	ejemplo en un cluster de	ordenadores que nos permita obtener una solución de la manera más
+	rápida posible.
+\end{itemize}
+
+\section{Publicaciones asociadas a la tesis}
+\noindent A continuación se exponen las publicaciones asociadas a esta tesis doctoral.
+\subsection{Artículos en revistas}
+\begin{itemize}
+	\item J. C. Fernández, F. J. Martínez, C. Hervás, and P. A. Gutiérrez. Sensitivity versus
+accuracy in multi-class problems using memetic pareto evolutionary neural
+			networks. \textit{IEEE Transactions on Neural Networks}, 21(5):750–770, 2010.
+	\item J. C. Fernández, C. Hervás, F. J. Martínez-Estudillo, and P. A. Gutierrez. Memetic
+			pareto evolutionary artificial neural networks to determine growth/no-growth in predictive
+			microbiology. \textit{Applied Soft Computing}, doi:10.1016/j.asoc.2009.12.013, 2009.
+	\item P. A. Gutiérrez, C. Hervás, J. C. Fernández, M. Jurado-Exposito, J. M. Peña-Barragán, and
+			F. López-Granados. Structural simplification of hybrid neuro-logistic regression models in
+			multispectral analysis of remote sensed data. \textit{ Neural Network World}, 19(1):3–20,
+			2009.
+	\item P. A. Gutiérrez, C. Hervás, M. Carbonero, and J. C. Fernández. Combined projection and
+			kernel basis functions for classification in evolutionary neural
+			networks. \textit{Neurocomputing}, 72:2731–2742, 2009.
+	\item J. Alcala-Fdez, L. Sánchez, S. García, M. J. d. Jesus, S. Ventura, J. M. Garrell, J. Otero,
+			C. Romero, J. Bacardit, V. M. Rivas, J. C. Fernández, and F. Herrera. Keel: A software tool
+			to assess evolutionary algorithms for data mining problems. \textit{ Soft Computing},
+			13:301–318,	2009.
+\end{itemize}
+
+\subsection{Artículos en congresos internacionales}
+\begin{itemize}
+	\item M. Cruz-Ramírez, C. Hervás-Martínez, J.C. Fernández, and J. Sánchez-Monedero: Learning
+			Artificial Neural Networks Multiclassifiers by Evolutionay Multiobjective Differential
+			Evolution guided by Statistical Distributions. \textit{In Proceedings of the Tenth
+			International Join Conference on Neural Networks, IJCNN2010}, Accepted, Barcelona,
+			Spain, July 2010.
+	\item M. Cruz-Ramírez, J. Sánchez-Monedero, F. Fernández-Navarro, J.C. Fernández, and C.
+			Hervás-Martínez: Hybrid Pareto Differential Evolutionary Artificial Neural Networks to
+			determine growth multi-classes in Predictive Microbiology. \textit{In Proccedings of the
+			The Twenty	Third International Conference on Industrial, Engineering and Other
+			Applications of Applied	Intelligent Systems IEA-AIE 2010}, Accepted, Córdoba, Spain,
+			June 2010.
+	\item C. Hervás-Martínez, P. A. Gutiérrez, J. C. Fernández, S. Salcedo-Sanz, A.
+			Portilla-Figueras, A. Pérez-Bellido, and L. Prieto. Hyperbolic tangent basis
+			function neural networks training by hybrid evolutionary programming for accurate
+			short-term wind speed prediction. \textit{In Proceedings of the Ninth International
+			Conference on Intelligent Systems Design and	Applications, ISDA 2009}, pages 193–198,
+			Pisa, Italy, November 2009.
+	\item J. C. Fernández, C. Hervás, F. J. Martínez, and M. Cruz. Design of artificial neural
+			networks
+			using a memetic pareto evolutionary algorithm using as objectives entropy versus variation
+			coefficient. \textit{In Proceedings of the Ninth International Conference on Intelligent
+			Systems Design and Applications, ISDA 2009}, pages 408–413, Pisa, Italy, November
+			2009.
+	\item J. C. Fernández, C. Hervás, F. J. Martínez, P. A. Gutiérrez, and M. Cruz. Memetic
+			pareto differential evolution for designing artificial neural networks in
+			multiclassification problems using cross-entropy versus sensitivity. \textit{In Proceedings
+			of the 4th International Conference, HAIS 2009}, in Lecture Notes in Artificial
+			Intelligence, volume 5572, pages 433–441, Salamanca, Spain, June 2009.
+	\item P. A. Gutiérrez, C. Hervás-Martínez, J. C. Fernández, and F. López-Granados. Hybrid
+			multilogistic regression by means of evolutionary radial basis functions: Application to
+			precision agriculture. \textit{In Proceedings of the 4th International Conference, HAIS
+			2009}, in Lecture Notes in Artificial Intelligence, volume 5572, pages 244–251,
+			Salamanca, Spain,	June 2009.
+	\item P. A. Gutiérrez, C. Hervás-Martínez, F. J. Martínez-Estudillo, and J. C. Fernández. Mul-
+			tilogistic regression using initial and radial basis function covariates. \textit{In
+			Proceedings of	the 2009 International Join Conference on Neural Networks, IJCNN 09},
+			pages 1067–1074, Atlanta, USA, June 2009.
+	\item F. Fernández-Navarro, P. A. Gutiérrez, C. Hervás-Martínez, and J. C. Fernández. A sen-
+			sitivity clustering method for hybrid evolutionary algorithms. \textit{In Proceedings of
+			the Third International Work-Conference on the Interplay between Natural and
+			Artificial Computation, IWINAC2009} in Lecture Notes in Computer Science, Part 1,
+			volume 5601, pages	245–254, Santiago de Compostela, Spain, June 2009.
+	\item P. A. Gutiérrez, J. C. Fernández, and C. Hervás. Feature selection for hybrid neuro-
+			logistic regression applied to classification of remote sensed data. \textit{In Proceedings
+			of the Eighth International Conference on Hybrid Intelligent Systems, HIS 2008},
+			pages 625–630, Barcelona, Spain, September 2008.
+	\item J. C. Fernández, P. A. Gutiérrez, C. Hervás, and F. J. Martínez. Memetic pareto
+			evolutionary artificial neural networks for the determination of growth limits of listeria
+			monocytogenes. \textit{In Proceedings of the Eighth International Conference on
+Hybrid Intelligent			Systems, HIS 2008}, pagess 631–636, Barcelona, Spain, September 2008.
+	\item F. J. Martínez-Estudillo, P. A. Gutiérrez, C. Hervás, and J. C. Fernández. Evolutionary
+			learning by a sensitivity-accuracy approach for multi-class problems. \textit{In
+			Proceedings of	the IEEE World Congress on Computational Intelligence, CEC 08}, pages
+			1581–1588, Hong Kong, China, June 2008.
+	\item A. Valero, F. Pérez-Rodriguez, E. Carrasco, C. Hervás, P. A. Gutiérrez, J. C. Fernández, R.
+			M. García-Gimeno, and G. Zurera. Evolutionary combined neural networks for
+			modelling the growth boundaries for a five strain staphylococcus aureus cocktail against
+			temperature, ph and water activity. \textit{In Proceedings of the 5th International
+			Conference	Predictive Modelling in Foods, IC PMF 2007}, pages 291–294, Athens,
+			Greece, September	2007.
+	\item P. A. Gutierrez, C. Hervás, M. Carbonero, and J. C. Fernández. Combined proyection and
+			kernel basis functions for classification in evolutionary neural networks. \textit{In
+			Proceedings	of the XII Conference of the Spanish Association for Artificial
+			Intelligence (CAEPIA-TTIA 2007), II International Workshop on Hybrid Artificial
+			Intelligence Systems	(HAIS 2007)} in Innovations in Hybrid Intelligent Systems,
+			Advances in Soft Computing, volume 44, pages 88–95, Salamanca, Spain, September 2007.
+	\item C. Hervás, F. J. Martínez, M. Carbonero, C. Romero, and J. C. Fernández. Evolutionary
+			combining of basis function neural networks for classification. \textit{In Proceedings of
+			the 2nd.	International Work-Conference on the Interplay between Natural and
+			Artificial Computaion, IWINAC2007} in Lecture Notes in Computer Science, Part 1,
+			volume 4527, pages	447–456, La Manga del Mar Menor, Spain, June 2007.
+\end{itemize}
+
+\subsection{Artículos en congresos nacionales}
+\begin{itemize}
+	\item P. A. Gutiérrez, C. Hervás, J. C. Fernández, J. M. Peña-Barragan, M. Jurado-Esposito, y
+			F. López-Granados. Hibridación de algoritmos de aprendizaje para modelos neurologísticos
+			aplicados a la clasificación de cubiertas vegetales. \textit{ En Actas del VI Congreso
+			español sobre	metaheurísticas, algoritmos evolutivos y bioinspirados, MAEB 2009},
+			páginas 325–332, Málaga, España, Febrero 2009.
+	\item J. C. Fernández, M. Carbonero, P. A. Gutiérrez, y C. Hervás. Ensembles de redes
+			neuronales construidos mediante algoritmos híbridos multiobjetivo para optimizar la
+			precisión y la sensitividad. \textit{En Actas del VI Congreso español sobre
+metaheurísticas,
+			algoritmos evolutivos y bioinspirados, MAEB 2009}, páginas 309–316, Tenerife, España,
+			Febrero 2009.
+	\item C. Hervás, F. J. Martínez, A. C. Martínez, P. A. Gutiérrez, y J. C. Fernández. Aprendizaje
+			mediante la hibridación de técnicas heurísticas y estadísticas de optimización en
+			regresión logística binaria. \textit{En Actas del V Congreso Español sobre metaheurísticas,
+			algoritmos evolutivos y bioinspirados, MAEB 2007}, páginas 61–68, Tenerife, España,
+			Febrero	2007.
+	\item C. Hervás, F. J. Martínez, P. A. Gutiérrez, J. C. Fernández, y A.J. Tallón. Clasificación
+			mediante la evolución de modelos híbridos de redes neuronales. \textit{En Actas del V
+			Congreso	Español sobre Metaheurísticas, Algoritmos Evolutivos y Bioinspirados,
+			MAEB07}, páginas 77–84, Tenerife, España, Febrero 2007.
+	\item P. A. Gutierrez, J. C. Fernández, y C. Hervás. Algoritmos de aprendizaje evolutivo y
+			estadístico para la determinación de mapas de malas hierbas utilizando técnicas de telede-
+			tección. \textit{En Actas del II congreso español de informática, CEDI 2007, dentro del
+			taller I	jornadas sobre algoritmos evolutivos y metaheurísticas, JAEM 07}, páginas
+			65–72, Zaragoza,	España, Septiembre 2007.
+	\item C. Hervás, P. A. Gutiérrez, J. C. Fernández, y A.J. Tallón. Regresión logística multi-
+			clase utilizando funciones de base evolutivas de tipo proyección. \textit{En Actas del II
+			congreso	español de informática, CEDI 2007, dentro del IV taller de minería de datos
+			y aprendizaje,	TAMIDA 2007}, páginas 65–72, Zaragoza, España, Septiembre 2007.
+\end{itemize}
+\newpage
+\section{Trabajo futuro}
+\begin{itemize}
+% 	\item Con respecto a la hibridación de modelos con diferentes unidades en capa oculta:
+% 				\begin{enumerate}
+% 				   \item Actualmente estamos trabajando en la hipótesis sobre
+% 					el caso en que una estructura	de los modelos que utilizan de forma combinada
+% 					funciones de base PU y RBF podrían ajustarse a los datos mejor que
+% 					otros modelos que utilicen	unidades	SU y RBF puras, asociado a la existencia de una
+% 					gran diferencia entre los	valores de un relativamente pequeño número de
+% 					datos en los bordes del dominio y en el dominio interno.
+% 					\item A partir de las distribuciones de frecuencias asociadas a los patrones de los
+% 				    conjuntos de entrenamiento en problemas de clasificación y de las funciones de
+% 				    entropía cruzada, ¿es posible definir las características asociadas a la base
+% 				    de datos que determinen la familia de funciones (reconocedores universales)
+% 				    que es adecuada para mejorar la clasificación?
+% 				    \item Podemos determinar algunas propiedades de las funciones de probabilidad a
+% 		          priori que permitan elegir entre diferentes familias de reconocedores
+% 				    universales, o bien entre la mezcla ''inteligente`` de diferentes modelos.
+% 					 \item ¿Es posible incorporar al algoritmo evolutivo procedimientos que permitan, en
+% 		          determinados momentos de la evolución, determinar el tipo de unidad que hay
+% 					 que incluir en el modelo para mejorar la precisión del clasificador en el
+% 				    conjunto de generalización?
+% 				\end{enumerate}
+	\item En cuanto al algoritmo MPENSGAII hay varias direcciones de trabajo que se podrían llevar a
+			cabo en el futuro:
+			\begin{enumerate}
+					\item Desarrollar otros MOEAS basados en las medidas $(MS,C)$.
+					\item Utilizar otro tipo de funciones de base en el modelo de red neuronal, ya que
+					ambas medidas son	independientes del algoritmo y de la función base
+					utilizada.
+					\item Incorporar nuevas técnicas de \textit{ensembles} que mejoren los resultados
+					obtenidos con nuestra aproximación \cite{Dietterich1997,Kuncheva2005}, y que
+					trabajen con los modelos del frente de Pareto de manera más eficaz. Por
+					ejemplo,	particionando el conjunto de datos, usando coevolución o
+					utilizando la técnica TOPSIS (\textit{Technique for Order Pre-ference by
+					Similarity to Ideal Solution}) \cite{Hwang1981}. La lógica subyacente
+					de la técnica TOPSIS es definir la solución ideal positiva y la solución
+					ideal negativa. La	solución ideal positiva es la solución que maximiza
+					los criterios de beneficio y reduce al mínimo	los criterios de costes; la
+					solución ideal negativa	es aquella que maximiza los criterios de
+					costes y reduce al mínimo los criterios de beneficio. La alternativa
+					óptima es la que esté más cerca de la solución ideal positiva y más
+					alejada	de la solución ideal negativa. Las distintas	alternativas se
+					ordenan según su valor de proximidad con la solución ideal,	siendo la
+					mejor alternativa aquella con mayor	valor de proximidad.
+					\item Incorporar técnicas de remuestreo para	problemas altamente desbalanceados, como
+					por ejemplo SMOTE \cite{Chawla2002}.
+			\end{enumerate}
+	\item Utilizar otras métricas distintas a la precisión y la $MS$ que sean
+			favorables para obtener clasificadores con una precisión alta y con un buen balance de
+			clasificación en todas las clases de un determinado problema multi-clase.
+	\item Estamos estudiando y trabajando en el algoritmo diferencial desarrollado en esta tesis
+			para mejorar la			manera de			seleccionar los padres	principales, a partir de
+			los cuales se obtiene un			nuevo hijo. Concretamente
+			estamos usando	como padres los valores extremos y el estadístico de centralización del
+			intervalo de confianza construido utilizando distribuciones normales y no
+normales
+			asociadas a los mejores individuos de la población, creando así padres virtuales.
+	 \item En un trabajo futuro, quedaría abierta la opción de aplicar un algoritmo de LS en las
+			dos direcciones u objetivos que guían a MPENSGAII y a MPDE (ver artículos
+			de Moller \cite{Moller1993,Falas2005}), por ejemplo mediante el uso de otra función
+			objetivo que sustituya a $MS$ y que sea derivable, mediante un procedimiento por etapas en
+			las que de forma alternada o secuencial se optimicen los objetivos del problema, o
+			mediante algún tipo de combinación que utilice información de los dos objetivos.
+	 \item Otra intención a corto plazo es probar el rendimiento del algoritmo MPENSGAII y MPDE con
+			otras funciones de base como PUs, RBFs, GRBFs y q-Gaussianas en capa oculta, en
+vez de utilizar solo funciones de base SUs,
+			como se ha hecho hasta	ahora.
+	 \item Finalmente, siguiendo la metodología del algoritmo desarrollado para entrenar
+modelos
+			híbridos, CBFEP, pretendemos desarrollar este tipo de modelos en un entorno
+multi-objetivo.
+% 	 \item También sería interesante estudiar otras técnicas de la literatura sobre DE para poder
+% 			aplicar algún concepto diferente a nuestro algoritmo MPDE que hagan mejorar su rendimiento
+% 			y		velocidad de convergencia, esta última se ha mejorado considerablemente con
+% 			respecto a los		algoritmo más importantes de la literatura en este ámbito, como por
+% 			ejemplo el algoritmo		MPANN.
+\end{itemize}
+\paginavaciacompleta

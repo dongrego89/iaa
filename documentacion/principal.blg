@@ -1,0 +1,57 @@
+This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: principal.aux
+The style file: unsrt.bst
+Reallocated field_info (elt_size=4) to 10267 items from 5000.
+Database file #1: ./bibliografia/tesis.bib
+Warning--entry type for "UCI2007" isn't style-file defined
+--line 1 of file ./bibliografia/tesis.bib
+Warning--entry type for "Commission1999" isn't style-file defined
+--line 67 of file ./bibliografia/tesis.bib
+Warning--entry type for "Chang2001" isn't style-file defined
+--line 1278 of file ./bibliografia/tesis.bib
+Warning--entry type for "Cotta2001" isn't style-file defined
+--line 1991 of file ./bibliografia/tesis.bib
+Warning--can't use both volume and number fields in Yao1999
+You've used 229 entries,
+            1791 wiz_defined-function locations,
+            1824 strings with 43722 characters,
+and the built_in function-call counts, 57905 in all, are:
+= -- 5615
+> -- 2114
+< -- 76
++ -- 799
+- -- 570
+* -- 3690
+:= -- 8585
+add.period$ -- 691
+call.type$ -- 229
+change.case$ -- 181
+chr.to.int$ -- 0
+cite$ -- 230
+duplicate$ -- 2782
+empty$ -- 5696
+format.name$ -- 570
+if$ -- 13282
+int.to.chr$ -- 0
+int.to.str$ -- 229
+missing$ -- 271
+newline$ -- 1144
+num.names$ -- 233
+pop$ -- 783
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 1418
+stack$ -- 0
+substring$ -- 4453
+swap$ -- 791
+text.length$ -- 76
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 1
+while$ -- 624
+width$ -- 232
+write$ -- 2539
+(There were 5 warnings)
