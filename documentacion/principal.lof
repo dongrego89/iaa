@@ -1,10 +1,16 @@
 \select@language {spanish}
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Base de datos 'wine'\relax }}{2}
+\contentsline {figure}{\numberline {1.2}{\ignorespaces Base de datos 'wine' tras aplicar Normalize\relax }}{2}
+\contentsline {figure}{\numberline {1.3}{\ignorespaces Base de datos y media calculada tras aplicar ReplaceMissingValues\relax }}{3}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Base de datos 'notas' con valores perdidos}}}{3}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Media tras aplicar el filtro}}}{3}
+\contentsline {figure}{\numberline {1.4}{\ignorespaces Fichero final con el valor perdido reemplazado\relax }}{3}
+\contentsline {figure}{\numberline {1.5}{\ignorespaces Antes y despu\IeC {\'e}s de aplicar RemoveUseless\relax }}{4}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Base de datos 'colores' con atributo nominal}}}{4}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Fichero tras aplicar filtro}}}{4}
+\contentsline {figure}{\numberline {1.6}{\ignorespaces Base de datos 'colores'\relax }}{5}
+\contentsline {figure}{\numberline {1.7}{\ignorespaces Fichero final tras aplicar PrincipalComponents\relax }}{5}
+\contentsline {figure}{\numberline {1.8}{\ignorespaces Base de datos 'colores' con un atributo num\IeC {\'e}rico\relax }}{6}
+\contentsline {figure}{\numberline {1.9}{\ignorespaces Fichero final tras aplicar RandomProjection\relax }}{6}
 \addvspace {10\p@ }
-\addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Cruce discreto binomial (izquierda) y cruce discreto exponencial (derecha). Los individuos $\mathbf {x}$ e $\mathbf {y}$ dan lugar a otro individuo $\mathbf {z}$.\relax }}{24}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Principales modelos de DE. $p$ es el n\IeC {\'u}mero de pares de vectores que conforman la diferencia, $j_{r}$ es un valor aleatorio generado en el intervalo $\left [ 0,n\right ]$, donde $n$ es el n\IeC {\'u}mero de variables del problema. $x_{r3}$ es el padre principal y $x_{r1}$ y $x_{r2}$ los padres secundarios. $F$ y $K$ son valores de escala, $u_{i}$ es el hijo creado y $x_{best}$ significa que se ha seleccionado como padre principal el mejor individuo o soluci\IeC {\'o}n de la poblaci\IeC {\'o}n en una determinada generaci\IeC {\'o}n, \textit {bin} representa cruce binario y \textit {exp} cruce exponencial, y \textit {\textbf {dir}} indica que se incluye informaci\IeC {\'o}n de alguna funci\IeC {\'o}n de aptitud al cruce y a la mutaci\IeC {\'o}n.\relax }}{26}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces C\IeC {\'a}lculo de la distancia \textit {crowding}. Los puntos azules son soluciones de un mismo frente.\relax }}{28}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Pseudoc\IeC {\'o}digo del algoritmo MPANN.\relax }}{35}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Pseudoc\IeC {\'o}digo del algoritmo MPDE.\relax }}{41}
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Frente de Pareto en entrenamiento $(A_{1},A_{2})$, y valores asociados a $(A_{1},C)$ en generalizaci\IeC {\'o}n para el conjunto de datos Balance.\relax }}{47}

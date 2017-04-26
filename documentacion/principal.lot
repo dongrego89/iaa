@@ -1,6 +1,3 @@
 \select@language {spanish}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\addvspace {10\p@ }
-\contentsline {table}{\numberline {3.1}{\ignorespaces Caracter\IeC {\'\i }sticas de los conjuntos de datos de la UCI.\relax }}{44}
-\contentsline {table}{\numberline {3.2}{\ignorespaces Resultados estad\IeC {\'\i }sticos para MPDE, MPENSGAII y SVM en media y desviaci\IeC {\'o}n t\IeC {\'\i }pica sobre el conjunto de generalizaci\IeC {\'o}n para $C$ y $MS$.\relax }}{46}

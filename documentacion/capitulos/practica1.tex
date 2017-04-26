@@ -6,103 +6,170 @@
 % 	\begin{flushright}José Ortega y Gasset.\end{flushright}
 % \end{quotation}
 
-\
+
+
 \section{Filtros no supervisados}
-Son filtros que no tienen en cuenta la variable marca de clase.
+%Son filtros que no tienen en cuenta la variable marca de clase.
+	
+	\newpage
+
 	\subsection{Normalize}
+
+	Realiza una normalización de todos los valores numéricos en el conjunto de datos. 
+
+	
 	\begin{justify}
-		Realiza una normalización de todos los valores numéricos en el conjunto de datos. 
+	\textbf{Uso}
+	\end{justify}
+		
+	Los valores son modificados al rango [0,1], tomando el valor 0 el dato más pequeño del conjunto y tomando el valor 1 el dato mayor del mismo, quedando el resto de valores en valores continuos dentro del rango.
+
+	
+	\begin{justify}
+	\textbf{Ejemplo}
 	\end{justify}
 
-	\begin{itemize}
-	\item \textbf{Uso}
-		\begin{justify}
-			Los valores son modificados al rango [0,1], tomando el valor 0 el dato más pequeño del conjunto y tomando el valor 1 el dato mayor del mismo, quedando el resto de valores en valores continuos dentro del rango.
-		\end{justify}
 
+	\begin{figure}[!htp]
+	\centering
+	\includegraphics[scale=.32]{./figuras/image22.png}
+	\caption{Base de datos 'wine'}
+	\end{figure}
+	
+	\begin{figure}[!htp]
+	\centering
+	\includegraphics[scale=.32]{./figuras/image21.png}
+	\caption{Base de datos 'wine' tras aplicar Normalize}
+	\end{figure}
 
-
-
-		\item \textbf{Ejemplo}
-
-		\begin{comment}
-		\begin{figure}[!htp]
-		\centering
-		\includegraphics[keepaspectratio,width=12.5cm]{./figuras/1.png}
-		\caption{Base de datos wine.arff}
-		
-		\includegraphics[keepaspectratio,width=12.5cm]{./figuras/2.png}
-		\caption{Base de datos wine tras aplicar normalize.arff}
-			%\label{Etiqueta}
-		\end{figure}
-		\end{comment}
-		
-	\end{itemize}
-
-	%\begin{easylist}[itemize]
-	%	& \textbf{Uso}
-	%	& \textbf{Ejemplo}
-	%\end{easylist}
-
+\newpage
 	\subsection{ReplaceMissingValues}
-	\begin{justify}
 	Reemplaza todo valor perdido, los cuales son representados con el signo '?', de los atributos nominales y numéricos.
+
+	\begin{justify}
+	\textbf{Uso} 
 	\end{justify}
 
-	\begin{itemize}
-		\item \textbf{Uso}
-		\begin{justify}
-			Busca aquellos valores perdidos y los reemplaza con los valores de las modas y medias para dicho atributo.
-		\end{justify}
-		\begin{justify}
-			Para ilustrar el uso de este filtro se ha usado una pequeña base de datos que contiene notas de 3 asignaturas para varias instancias que son los alumnos, y se observa como los datos perdidos son reemplazados.
-		\end{justify}
-		\item \textbf{Ejemplo}
-	\end{itemize}
+	Busca aquellos valores perdidos y los reemplaza con los valores de las modas y medias para dicho atributo.
 
+	Para ilustrar el uso de este filtro se ha usado una pequeña base de datos que contiene notas de 3 asignaturas para varias instancias que son los alumnos, y se observa como los datos perdidos son reemplazados.
+
+	
+	\begin{justify}
+	\textbf{Ejemplo}
+	\end{justify}
+
+	\begin{figure}[!htp]
+
+	\centering
+	  \subfloat[Base de datos 'notas' con valores perdidos]{
+		\includegraphics[scale=.32]{./figuras/image19.png}}
+	  \subfloat[Media tras aplicar el filtro]{
+		\includegraphics[scale=.32]{./figuras/image10.png}}
+	\caption{Base de datos y media calculada tras aplicar ReplaceMissingValues}
+	\end{figure}
+  
+	\begin{figure}[!htp]
+	\centering
+	\includegraphics[scale=.32]{./figuras/image31.png}
+	\caption{Fichero final con el valor perdido reemplazado}
+	\end{figure}
+
+\newpage
 \subsection{RemoveUseless}
 	\begin{justify}
 		Elimina atributos nominales donde la varianza es muy grande o muy pequeña y que por tanto, no tienen utilidad.
 	\end{justify}
 
-	\begin{itemize}
-		\item \textbf{Uso}
 
-		\begin{justify}
-			Parar ilustrar este filtro se ha usado una pequeña base de datos que contiene 1 atributo nominal que representa un color, y 2 atributos numéricos que representan otros datos asociados. Se puede observar como el atributo nominal tiene un valor distinto para cada instancia, y por tanto, la varianza es la máxima, así pues el filtro actúa descartando dicho atributo nominal.
-		\end{justify}
 
-		\item \textbf{Ejemplo}
-	\end{itemize}
+	\begin{justify}
+	\textbf{Uso} 
+	\end{justify}
+	Realiza el análisis y transformación de los componentes principales de los datos. Se usa junto con una búsqueda de Ranker. La reducción de la dimensionalidad se logra eligiendo suficientes vectores propios para tener en cuenta algún porcentaje de la varianza en los datos originales, por defecto 0.95.
 
-Realiza el análisis y transformación de los componentes principales de los datos. Utilizar junto con una búsqueda de Ranker. La reducción de la dimensionalidad se logra eligiendo suficientes vectores propios para tener en cuenta algún porcentaje de la varianza en los datos originales --- por defecto 0.95 (95%). El ruido de los atributos puede filtrarse transformándolo en el espacio del PC, eliminando algunos de los vectores propios peores, y luego transformando de nuevo al espacio original.
+	\begin{justify}
+	\textbf{Ejemplo}
+	\end{justify}
+	Parar ilustrar este filtro se ha usado una pequeña base de datos que contiene un atributo nominal que representa un color, y 2 atributos numéricos que representan otros datos asociados. Se puede observar como el atributo nominal tiene un valor distinto para cada instancia, y por tanto, la varianza es la máxima, así pues el filtro actúa descartando dicho atributo nominal.
+  
+
+	\begin{figure}[!htp]
+	\centering
+	  \subfloat[Base de datos 'colores' con atributo nominal]{
+		\includegraphics[scale=.45]{./figuras/image2.png}}
+	  \subfloat[Fichero tras aplicar filtro]{
+		\includegraphics[scale=.5]{./figuras/image40.png}}
+	\caption{Antes y después de aplicar RemoveUseless}
+	\end{figure}
+
+
+
+
+\newpage
 
 	\subsection{PrincipalComponents}
-	\begin{justify}
-		Realiza el análisis y transformación de las componentes principales de los datos.
-	\end{justify}
-	\begin{itemize}
-		\item \textbf{Uso}
+
+	Realiza el análisis y transformación de las componentes principales de los datos.
+
 
 	\begin{justify}
-		La reducción de la dimensionalidad se logra eligiendo suficientes vectores propios para tener en cuenta algún porcentaje de la varianza en los datos originales (por defecto 0.95). El ruido de los atributos puede filtrarse transformándolo en el espacio de la Componente Principal, eliminando algunos de los vectores propios peores, y luego transformando de nuevo al espacio original.
+	\textbf{Uso} 
 	\end{justify}
-		\item \textbf{Ejemplo}
-	\end{itemize}
+
+	La reducción de la dimensionalidad se logra eligiendo suficientes vectores propios para tener en cuenta algún porcentaje de la varianza en los datos originales (por defecto 0.95). El ruido de los atributos puede filtrarse transformándolo en el espacio de la Componente Principal, eliminando algunos de los vectores propios peores, y luego transformando de nuevo al espacio original.
+
+	\begin{justify}
+	\textbf{Ejemplo}
+	\end{justify}
+
+	
+	\begin{figure}[!htp]
+	\centering
+	\includegraphics[scale=.42]{./figuras/image2.png}
+	\caption{Base de datos 'colores'}
+	\end{figure}
+	
+	\begin{figure}[!htp]
+	\centering
+	\includegraphics[scale=.42]{./figuras/image12.png}
+	\caption{Fichero final tras aplicar PrincipalComponents}
+	\end{figure}
+
+
+\newpage
 
 	\subsection{RandomProjection}
-	\begin{justify}
 		Reduce la dimensionalidad de los datos proyectándolos en un subespacio de menor dimensión usando una matriz aleatoria con columnas de longitud unitaria.
-	\end{justify}
-	\begin{itemize}
-		\item \textbf{Uso}
-		Primero aplica el filtro NominalToBinary para convertir todos los atributos a numérico antes de reducir la dimensión. Conserva el atributo de marca de clase.
-	\begin{justify}
-		
-	\end{justify}
-		\item \textbf{Ejemplo}		
-	\end{itemize}
+	
 
+	\begin{justify}
+	\textbf{Uso} 
+	\end{justify}
+	
+		Primero aplica el filtro NominalToBinary para convertir todos los atributos a numérico antes de reducir la dimensión. Conserva el atributo de marca de clase.
+
+	\begin{justify}
+	\textbf{Ejemplo}
+	\end{justify}
+
+		Como se muestra en la Figura 1.8 partimos de una base de datos con un atributo nominal de 3 posibles opciones 'Blanco', 'Rojo' y 'Azul' junto con un atributo numérico x1.
+		Una vez aplicado el filtro, el primer atributo queda establecido en una matriz numérica de un subespacio menor. 
+
+	\begin{figure}[!htp]
+	\centering
+	\includegraphics[scale=.42]{./figuras/image11.png}
+	\caption{Base de datos 'colores' con un atributo numérico}
+	\end{figure}
+	
+	\begin{figure}[!htp]
+	\centering
+	\includegraphics[scale=.42]{./figuras/image44.png}
+	\caption{Fichero final tras aplicar RandomProjection}
+	\end{figure}
+
+
+\newpage
 	\subsection{NominalToBinary}
 	\begin{justify}
 	Convierte todos los atributos nominales en atributos binarios numéricos. 	
@@ -153,7 +220,7 @@ Realiza el análisis y transformación de los componentes principales de los dat
 
 \newpage
 \section{Filtros supervisados}
-	Son filtros que tienen en cuenta la variable marca de clase.	
+	%Son filtros que tienen en cuenta la variable marca de clase.	
 	\subsection{AttributeSelection}
 	\begin{justify}
 
