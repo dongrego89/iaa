@@ -8,41 +8,44 @@
 
 
 
+\newpage
 \section{Filtros no supervisados}
 %Son filtros que no tienen en cuenta la variable marca de clase.
 	
-	\newpage
 
 	\subsection{Normalize}
 
+	\begin{justify}
 	Realiza una normalización de todos los valores numéricos en el conjunto de datos. 
+	\end{justify}
 
-	
 	\begin{justify}
 	\textbf{Uso}
-	\end{justify}
-		
-	Los valores son modificados al rango [0,1], tomando el valor 0 el dato más pequeño del conjunto y tomando el valor 1 el dato mayor del mismo, quedando el resto de valores en valores continuos dentro del rango.
 
+	Los valores son modificados al rango [0,1], tomando el valor 0 el dato más pequeño del conjunto y tomando el valor 1 el dato mayor del mismo, quedando el resto de valores en valores continuos dentro del rango.
+	\end{justify}
 	
 	\begin{justify}
-	\textbf{Ejemplo}
-	\end{justify}
 
+	\textbf{Ejemplo}
+
+	Como se observa en la figura \ref{fig:normalize1}, se tiene un conjunto de atributos originales a los cuales se les aplicará el filtro. Una vez filtrados, se puede observar en la figura \ref{fig:normalize2} cómo estos han quedado en un rango 0-1.
+	\end{justify}
 
 	\begin{figure}[!htp]
 	\centering
 	\includegraphics[scale=.32]{./figuras/image22.png}
 	\caption{Base de datos 'wine'}
+	\label{fig:normalize1}
 	\end{figure}
 	
 	\begin{figure}[!htp]
 	\centering
 	\includegraphics[scale=.32]{./figuras/image21.png}
 	\caption{Base de datos 'wine' tras aplicar Normalize}
+	\label{fig:normalize2}
 	\end{figure}
 
-\newpage
 	\subsection{ReplaceMissingValues}
 	Reemplaza todo valor perdido, los cuales son representados con el signo '?', de los atributos nominales y numéricos.
 
@@ -171,17 +174,24 @@
 
 \newpage
 	\subsection{NominalToBinary}
-	\begin{justify}
 	Convierte todos los atributos nominales en atributos binarios numéricos. 	
-	\end{justify}
-	\begin{itemize}
-		\item \textbf{Uso}
-	\begin{justify}
-	Un atributo con k posibles valores se transforma en k atributos binarios (0-1) si la clase es nominal. Los atributos binarios se dejan binarios. Si la clase es numérica, es posible que desee utilizar la versión supervisada de este filtro.	
-	\end{justify}
-		\item \textbf{Ejemplo}
-	\end{itemize}
 
+	\begin{justify}
+	\textbf{Uso} 
+	\end{justify}
+	
+	Un atributo con k posibles valores se transforma en k atributos binarios (0-1) si la clase es nominal. Los atributos binarios se dejan binarios. Si la clase es numérica, es posible que desee utilizar la versión supervisada de este filtro.
+
+	\begin{justify}
+	\textbf{Ejemplo}
+	\end{justify}
+
+
+
+
+
+
+\newpage
 	\subsection{RemoveMissclassified}
 	\begin{justify}
 	Elimina aquellas instancias que han sido incorrectamente clasificadas, de modo que no existan valores atípicos.
